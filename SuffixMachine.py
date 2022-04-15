@@ -11,6 +11,10 @@ class Node:
         self.lable = ''
         self.isFinish = False
         self.edges = set()
+    
+    def get_next(self, c):
+        for e in self.edges:
+            
 
 class Edge:
     
