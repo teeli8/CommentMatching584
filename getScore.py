@@ -24,7 +24,7 @@ class KeyWordsDict:
             word = line[0]
             score = line[1]
             dictMap[word] = score
-        commentKeys = dictMap.keys()
+        #commentKeys = dictMap.keys()
 
         return dictMap
 
