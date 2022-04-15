@@ -5,12 +5,19 @@ Created on Fri Apr 15 14:57:29 2022
 @author: Yigan
 """
 import re
+import string
+
 
 def remove_space(comments):
-    result = [x for x in re.split(',| ', comments) if x != '']
-    return result
+    punc = string.punctuation
+    punc += (' ')
+    for i in punc:
+        comments = comments.replace(i, '')
+    return comments
+
 
 if __name__ == '__main__':
-    s= "hello, you are shit"
-    str = " , this,  is a ,,, test string , , to find regex,,in js.  , ";
-    print(remove_space(str))
+    s = "hello, you are shit"
+    s1 = "this, is , a, test, string"
+
+    print(remove_space(s1))
