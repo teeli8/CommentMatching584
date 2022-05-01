@@ -21,3 +21,4 @@ issue 2
 amazing 5
 wonderful 5
 perfect 5
+terrible 1
