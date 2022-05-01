@@ -93,14 +93,19 @@ class SuffixAutomata:
         cInd = 0
         out = []
         while cInd < len(chars):
+           
             char = chars[cInd]
             nxtNode = curNode.get_next(char)
             if nxtNode is None:
                 nxtNode = curNode.link
                 curNode = nxtNode
+                if curNode is self.prime:
+                    cInd += 1
                 continue
             if nxtNode.isFinish:
-                out.append(self.indices[nxtNode.len])
+                can = self.indices[nxtNode.len]
+                if cInd >= len(can)-1 and string[cInd - len(can)+1:cInd+1] == can:
+                    out.append(can)
             curNode = nxtNode
             cInd += 1          
         
@@ -125,9 +130,10 @@ class SuffixAutomata:
             ma[ind] = string
         return ma
         
-
+'''
 patterns = ["abbcbc","ababc"]
 am = SuffixAutomata(patterns)
 am.print_nodes()
 out = am.match("bacababcccabbcbcabababbcbc")
 print(out)
+'''

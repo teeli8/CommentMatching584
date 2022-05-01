@@ -19,7 +19,7 @@ class KeyWordsDict:
 
     def __getWordDict(self, string):
         dictMap = {}
-        for line in Lines:
+        for line in string:
             line = line.strip().split(" ")
             word = line[0]
             score = line[1]
@@ -28,7 +28,7 @@ class KeyWordsDict:
 
         return dictMap
 
-
+'''
 if __name__ == '__main__':
     file1 = open('comments.data', 'r')
     Lines = file1.readlines()
@@ -36,7 +36,7 @@ if __name__ == '__main__':
     string = "excellent game, very good"
     string2 = "poor game it sucks"
     strs = [string, string2]
-
+'''
 
 
 
