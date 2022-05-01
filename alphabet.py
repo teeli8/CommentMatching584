@@ -11,6 +11,9 @@ import string
 def remove_space(comments):
     punc = string.punctuation
     punc += (' ')
+    num=1
+    a = str(num)
+    print(a)
     for i in punc:
         comments = comments.replace(i, '')
     return comments
